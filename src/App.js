@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import Product from "./Product";
+import { productData,responsive } from './Data'
+import Buttons from "./Buttons";
+
 
 function App() {
+ 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hii sarvesh</h1>
+      <Buttons/>
+      <Carousel transitionDuration={500} autoPlaySpeed={100} responsive={responsive}>
+        {
+        
+           productData.map((item)=>{
+              return <Product
+              key={item.id}
+              name={item.name}
+              url={item.imageurl}
+              price={item.price}/>
+            })
+
+        }
+      </Carousel>
+      ;
     </div>
   );
 }
