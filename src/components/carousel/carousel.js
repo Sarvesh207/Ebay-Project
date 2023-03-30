@@ -10,7 +10,7 @@ import Buttons from "./button/Buttons";
 export default function carousel() {
   return (
     <div>
-        <h1>Hii sarvesh</h1>
+        <h1>Hii I am sarvesh</h1>
       <Buttons/>
       <Carousel transitionDuration={500} autoPlaySpeed={100} responsive={responsive}>
         {
